@@ -1,0 +1,115 @@
+.faq-item {
+    padding: 20px 20px 0 50px;
+    background: @white;
+    border-radius: 5px;
+    box-shadow: 1 1 2 rgba(0, 0, 0, .10);
+    margin-bottom: @grid-gutter-width;
+    position: relative;
+
+    &__toggle {
+        width: 20px;
+        height: 20px;
+        border-radius: 18px;
+        background: @primary;
+        position: absolute;
+        top: 22px;
+        left: 20px;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            background: @white;
+            border-radius: 2px;
+            width: 10px;
+            height: 2px;
+            transform: translate(-50%, -50%);
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(0deg);
+            transition: 0.3s;
+        }
+
+        &.collapsed::before {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+
+    &__qa {
+        font-size: 17px;
+        font-weight: 600;
+        color: @dark;
+        padding-bottom: 20px;
+    }
+
+    &__ans {
+        font-size: 16px;
+        line-height: 1.6;
+        color: @dark;
+        padding-left: 23px;
+        position: relative;
+        padding-bottom: 20px;
+
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 20px;
+            width: 2px;
+            border-radius: 2px;
+            background: @primary;
+        }
+
+        #media-breakpoint-down(sm, {
+                padding-bottom: 16px;
+
+                &::before {
+                    bottom: 16px;
+                }
+            }
+
+        );
+    }
+
+    #media-breakpoint-down(md, {
+            padding: 32px 32px 0 92px;
+
+            &__toggle {
+                top: 33px;
+            }
+        }
+
+    );
+
+    #media-breakpoint-down(sm, {
+            padding: 16px 16px 0 54px;
+            margin-bottom: @grid-gutter-width / 2;
+
+
+            &__toggle {
+                top: 14px;
+                left: 16px;
+            }
+
+            &__qa {
+                font-size: 13px;
+                line-height: 15px;
+                padding-bottom: 16px;
+            }
+
+            &__ans {
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+
+    );
+}
