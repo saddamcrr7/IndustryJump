@@ -1,0 +1,35 @@
+.main-menu {
+    &__item {
+        margin: 0 10px;
+
+        &--link {
+            padding: 5px 10px;
+            font-size: 15px;
+            font-weight: @font-weight-bold;
+
+            &,
+            &:hover {
+                color: @footer-bg;
+                text-decoration: none;
+            }
+        }
+    }
+
+    #media-breakpoint-down(md, {
+            margin: 200px 0 50px 0;
+            text-align: center;
+
+            &__item {
+                margin: 10px 0;
+
+                &--link {
+                    display: inline-block;
+                    font-size: 30px;
+                    line-height: 30px;
+                    padding: 10px;
+                }
+            }
+        }
+
+    );
+}

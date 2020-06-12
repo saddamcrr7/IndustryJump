@@ -1,0 +1,59 @@
+.user-menu {
+    #media-breakpoint-down(md, {
+            display: flex;
+            justify-content: center;
+        }
+
+    );
+
+    &__item {
+        display: block;
+
+        &--link {
+            font-size: @btn-font-size;
+            font-weight: @font-weight-bold;
+            padding: 6px 11px;
+            border-radius: 5px;
+
+            #media-breakpoint-down(md, {
+                    display: inline-block;
+
+                    &-signIn {
+                        background: @primary ;
+                        color: @white;
+                    }
+                }
+
+            );
+
+            &,
+            &:hover {
+                text-decoration: none;
+            }
+
+            &-signIn {
+                background: @white;
+                color: @primary;
+
+                #media-breakpoint-down(md, {
+                        background: @mango ;
+                        color: @white;
+                        margin-right: 30px;
+                    }
+
+                );
+            }
+
+            &-postJob {
+                background: @primary;
+
+                &,
+                &:hover {
+                    color: @white;
+                }
+            }
+        }
+
+
+    }
+}
