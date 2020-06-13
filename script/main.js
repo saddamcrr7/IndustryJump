@@ -1,4 +1,3 @@
-
 window.onload = function () {
     // navbar
     const pageHeader = document.querySelector(".page-header")
@@ -17,53 +16,18 @@ window.onload = function () {
 
 
     // slider 
-    const breakpoint = window.matchMedia('(max-width: 990px)');
-    let storiesSlider
 
-    const breakpointChecker = function () {
-        if (breakpoint.matches === true) {
-            if (storiesSlider !== undefined) storiesSlider.destroy(true, true);
-            return;
-        } else if (breakpoint.matches === false) {
-            return enableSwiper();
-        }
-    };
-
-
-    const enableSwiper = function () {
-        storiesSlider =  new Swiper('.block-find-team__videos-slider', {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            wrapperClass: 'block-find-team__videos',
-            slideClass: 'video',
-            slideActiveClass: 'video--slide-active',
-        })
-
-    };
-
-    breakpoint.addListener(breakpointChecker);
-    breakpointChecker();
-  
-    const community = new Swiper('.community-member-slider', {
-        // Optional parameters
+    const heroSlider = new Swiper('.block-hero__slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 95,
+        wrapperClass: 'block-hero__slider-row',
+        slideClass: 'block-hero__slider-item',
+        slideActiveClass: 'block-hero__slider-item--active',
         loop: true,
-        slidesPerView: 3,
-        spaceBetween: 20,
+        loopFillGroupWithBlank: true,
         pagination: {
-            el: '.swiper-pagination',
+            el: '.block-hero__slider-pagination',
             clickable: true,
-        },
-        breakpoints: {
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            
-            767: {
-                slidesPerView: 1,
-                spaceBetween: 5,
-            },
         },
     })
 };
-
