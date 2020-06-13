@@ -1,0 +1,81 @@
+.director-circle {
+    width: 335px;
+    height: 335px;
+    position: relative;
+  
+    &__line {
+        position: absolute;
+        right: 14px;
+        bottom: 27px;
+    }
+
+    &__bg {
+        width: 270px;
+        height: 270px;
+        border-radius: 160px;
+        overflow: hidden;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        border: 2px solid @white;
+        overflow: hidden;
+        border-radius: 60px;
+        width: 49px;
+        height: 49px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &--1 {
+            width: 117px;
+            height: 117px;
+            top: 0;
+            left: 53px;
+        }
+
+        &--2 {
+            width: 100px;
+            height: 100px;
+            left: 0;
+            bottom: 79px;
+        }
+
+        &--3 {
+            width: 82px;
+            height: 82px;
+            left: 133px;
+            bottom: 0;
+        }
+
+        &--4 {
+            width: 66px;
+            height: 66px;
+            right: 10px;
+            bottom: 67px;
+        }
+
+        &--5 {
+            top: 104px;
+            right: 0;
+        }
+
+        &--6 {
+            top: 31px;
+            right: 53px;
+        }
+    }
+}
