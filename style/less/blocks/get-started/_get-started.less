@@ -1,0 +1,77 @@
+.block-get-started {
+    padding-top: 67px;
+    padding-bottom: 67px;
+    position: relative;
+
+    &__bg {
+        border: 1px solid #00000000;
+
+        &,
+        &::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        &::before {
+            content: '';
+            background: transparent linear-gradient(181deg, #00000000 0%, #202020 100%) 0% 0% no-repeat padding-box;
+        }
+    }
+
+    &__bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__container {
+        #make-container();
+        max-width: 530px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__tag {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: @font-weight-bold;
+        padding: 3px 5px;
+        border-radius: 3px;
+        background: @orange;
+        display: inline;
+        color: @white;
+    }
+
+    &__title {
+        font-size: 52px;
+        color: @white;
+        font-weight: @font-weight-bold;
+        margin-bottom: 7px;
+        text-shadow: 0px 3px 25px #000000;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
+
+    &__cta {
+        font-size: 18px;
+        font-weight: @font-weight-bold;
+        line-height: 18px;
+        padding: 14px 77px;
+        border-radius: 24px;
+        color: @white;
+        background: @primary;
+        text-transform: uppercase;
+        display: inline-block;
+
+        &:hover {
+            color: @white;
+            text-decoration: none;
+        }
+    }
+}
