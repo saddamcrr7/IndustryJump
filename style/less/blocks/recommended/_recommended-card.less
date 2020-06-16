@@ -1,0 +1,97 @@
+.recommended-card {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: @white;
+    box-shadow: 0px 7px 22px #6B6B6B14;
+
+    &__header {
+        height: 189px;
+        width: 100%;
+        position: relative;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__body {
+        padding: 30px;
+    }
+
+    &__tag {
+        font-size: 12px;
+        line-height: 12px;
+        color: @white;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-bottom: 11px;
+        padding: 4px 13px;
+        display: inline-block;
+
+        &--blue {
+            background: #2787D2;
+        }
+
+        &--mango {
+            background: @mango;
+        }
+
+        &--violet {
+            background: #683BE8;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        color: #333333;
+        font-weight: @font-weight-bolder;
+        margin-bottom: 13px;
+    }
+
+    &__sub {
+        font-size: 15px;
+        color: #767988;
+        line-height: 23px;
+        overflow: hidden;
+        height: 50px;
+    }
+
+    &__author {
+        display: flex;
+        align-items: center;
+        padding: 0 30px 30px 30px;
+    }
+
+    &__author-image {
+        width: 38px;
+        height: 38px;
+        border-radius: 20px;
+        margin-right: 12px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__author-name {
+        font-size: 16px;
+        color: #354052;
+        font-weight: @font-weight-semibold;
+        margin-bottom: 4px;
+        line-height: 16px;
+    }
+
+    &__post-time {
+        font-size: 14px;
+        line-height: 14px;
+        color: #ACACAC;
+    }
+}
