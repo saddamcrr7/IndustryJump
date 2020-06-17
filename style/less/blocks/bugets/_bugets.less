@@ -1,0 +1,27 @@
+.block-bugets {
+    padding-top: 154px;
+    padding-bottom: 166px;
+    background: #F6F8FA;
+
+    &__container {
+        #make-container();
+        #make-container-max-widths();
+    }
+
+    &__title {
+        font-size: 28px;
+        color: #191919;
+        font-weight: @font-weight-bolder;
+        margin-bottom: 84px;
+        text-align: center;
+    }
+
+    &__row {
+        #make-row();
+    }
+
+    &__col {
+        #make-col-ready();
+        #make-col(4);
+    }
+}
