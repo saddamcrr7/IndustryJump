@@ -1,9 +1,27 @@
 .block-need-music {
     padding: 138px 0;
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        z-index: 1;
+
+        &--tl {
+            top: 45px;
+            left: 173px;
+        }
+
+        &--tr {
+            top: 74px;
+            right: 124px;
+        }
+    }
 
     &__container {
         #make-container();
         #make-container-max-widths();
+        position: relative;
+        z-index: 2;
     }
 
     &__title {

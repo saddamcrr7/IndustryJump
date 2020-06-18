@@ -1,0 +1,4 @@
+<svg id="Icon_Arrow" data-name="Icon/Arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <rect id="Area" width="20" height="20" fill="none"/>
+  <path id="Arrow" d="M0,3V4H11V7l4-3.5L11,0V3Z" transform="translate(3 7)" fill="#fff"/>
+</svg>

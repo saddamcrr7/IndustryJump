@@ -1,6 +1,6 @@
 .block-get-started {
-    padding-top: 67px;
-    padding-bottom: 67px;
+    padding-top: 75px;
+    padding-bottom: 97px;
     position: relative;
 
     &__bg {
@@ -62,12 +62,20 @@
         font-size: 18px;
         font-weight: @font-weight-bold;
         line-height: 18px;
-        padding: 14px 77px;
+        padding: 14px;
         border-radius: 24px;
         color: @white;
         background: @primary;
         text-transform: uppercase;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 313px;
+        margin: 0 auto;
+
+        img {
+            margin-left: 15px;
+        }
 
         &:hover {
             color: @white;

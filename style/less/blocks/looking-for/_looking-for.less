@@ -53,11 +53,29 @@
 
     &__row {
         #make-row();
+        position: relative;
+    }
+
+    &__dot {
+        position: absolute;
+        z-index: 1;
+
+        &--bl {
+            left: 35px;
+            bottom: 0px;
+        }
+
+        &--tr {
+            right: 35px;
+            top: -30px
+        }
     }
 
     &__col {
         #make-col-ready();
         #make-col(4);
+        position: relative;
+        z-index: 2;
     }
 
     &__item {

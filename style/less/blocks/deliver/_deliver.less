@@ -9,7 +9,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: @footer-bg;
+        background: @black;
         z-index: 1;
     }
 
@@ -55,10 +55,28 @@
 
     &__row {
         #make-row();
+        position: relative;
     }
 
     &__col {
         #make-col-ready();
         #make-col(4);
+        position: relative;
+        z-index: 3;
+    }
+
+    &__dot {
+        position: absolute;
+        z-index: 1;
+
+        &--tl {
+            left: 87px;
+            top: -30px;
+        }
+
+        &--br {
+            right: 35px;
+            bottom: -30px;
+        }
     }
 }

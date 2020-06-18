@@ -44,6 +44,8 @@
         text-align: center;
         margin-bottom: 110px;
         margin-top: 30px;
+        display: flex;
+        justify-content: center;
     }
 
     &__cta {
@@ -60,6 +62,13 @@
             background: @primary;
             margin-right: @grid-gutter-width / 2;
             border: 1px solid @primary;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            svg {
+                margin-left: 10px;
+            }
         }
 
         &--info {
