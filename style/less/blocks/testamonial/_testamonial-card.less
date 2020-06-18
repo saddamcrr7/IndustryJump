@@ -13,6 +13,13 @@
         overflow: hidden;
     }
 
+    &__icon {
+        position: absolute;
+        top: 33px;
+        right: 33px;
+        z-index: 9;
+    }
+
     &__bg {
         position: absolute;
         top: 0;
@@ -138,9 +145,16 @@
         line-height: 16px;
         text-transform: capitalize;
         font-weight: @font-weight-bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:focus {
             outline: none;
+        }
+
+        img {
+            margin-right: 7px;
         }
     }
 }
