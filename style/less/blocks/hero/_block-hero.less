@@ -2,13 +2,25 @@
     position: relative;
     padding: 91px 0;
 
+    #media-breakpoint-down(sm, {
+        background: transparent linear-gradient(180deg, #102131 0%, #000000  100%) 0% 0% no-repeat padding-box;
+        padding-top: 65px;
+        padding-bottom: 7px;
+    });
+
     &__bg {
         position: absolute;
         top: 0;
         right: 0;
-        bottom: 0;
+        bottom: -1px;
         left: 0;
         z-index: 1;
+
+        #media-breakpoint-down(sm, {
+           background-image: url('../../../../images/hero-bg-mobile.png');
+           background-size: cover;
+           background-position: 0 0;
+        })
     }
 
     &__bg-image {
@@ -16,6 +28,10 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+
+        #media-breakpoint-down(sm, {
+            display: none;
+        })
     }
 
     &__container {
@@ -40,13 +56,24 @@
 
         &--yellow {
             color: @orange;
+
         }
 
         #media-breakpoint-down(md, {
                 font-size: 34px;
             }
 
-        )
+        );
+
+        #media-breakpoint-down(sm, {
+                &--yellow {
+                    color: @primary;
+                }
+
+                font-size: 29px;
+            }
+
+        );
     }
 
     &__ctas {
@@ -55,6 +82,11 @@
         margin-top: 30px;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+
+        #media-breakpoint-down(sm, {
+            margin-bottom: 67px;
+        })
     }
 
     &__cta {
@@ -89,6 +121,18 @@
             text-decoration: none;
             color: @white;
         }
+
+        #media-breakpoint-down(sm, {
+                margin-right: 0;
+                width: 100%;
+                justify-content: center;
+
+                &--info  {
+                    margin-top: 16px;
+                }
+            }
+
+        )
     }
 
     &__slider {
@@ -103,7 +147,12 @@
                 max-width: calc(100% - 20px);
             }
 
-        )
+        );
+
+        #media-breakpoint-down(sm, {
+            max-width: 311px;
+            margin-right: auto;
+        })
     }
 
     &__slider-row {
@@ -144,7 +193,11 @@
                 flex: 0 0 607px;
             }
 
-        )
+        );
+
+        #media-breakpoint-down(sm, {
+            flex: 0 0 311px;
+        })
     }
 
     &__slider-pagination {
@@ -192,5 +245,9 @@
                 opacity: 1;
             }
         }
+
+        #media-breakpoint-down(sm, {
+            margin-top: 23px;
+        })
     }
 }
