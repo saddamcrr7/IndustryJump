@@ -9,6 +9,11 @@
         border-radius: 10px;
         overflow: hidden;
         flex: 0 0 480px;
+
+     #media-breakpoint-down(md, {
+         width: 250px;
+         flex: 0 0 250px;
+     })
     }
 
     &__thumb-image {
@@ -50,6 +55,10 @@
         line-height: 44px;
         font-weight: @font-weight-heavy;
         margin-bottom: 8px;
+
+        #media-breakpoint-down(md, {
+         font-size: 29px;
+        })
     }
 
     &__views {
