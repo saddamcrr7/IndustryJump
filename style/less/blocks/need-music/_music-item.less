@@ -40,5 +40,15 @@
         font-size: 16px;
         color: @white;
         font-weight: @font-weight-bolder;
+        text-transform: uppercase;
     }
+
+    #media-breakpoint-down(md, {
+        width: 161px;
+        height: 36px;
+
+        &__title {
+            font-weight: normal;
+        }
+    })
 }

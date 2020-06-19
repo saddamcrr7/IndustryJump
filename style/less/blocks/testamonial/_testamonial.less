@@ -22,6 +22,12 @@
 
     &__col {
         #make-col-ready();
-        #make-col(4);
+        #media-breakpoint-up(lg, {
+            #make-col(4);
+        })
     }
+
+    #media-breakpoint-down(md, {
+        padding: 119px 0;
+    });
 }

@@ -35,7 +35,7 @@
         text-shadow: 0px 1px 2px #00000014;
         text-transform: capitalize;
         margin-bottom: 70px;
-       
+
         span {
             display: inline-block;
             position: relative;
@@ -60,9 +60,12 @@
 
     &__col {
         #make-col-ready();
-        #make-col(4);
         position: relative;
         z-index: 3;
+
+        #media-breakpoint-up(lg, {
+            #make-col(4);
+        });
     }
 
     &__dot {
@@ -78,5 +81,17 @@
             right: 35px;
             bottom: -30px;
         }
+
+        #media-breakpoint-down(md, {
+            &--tl {
+                left: 87px;
+                top: -30px;
+            }
+    
+            &--br {
+                right: 35px;
+                bottom: -10px;
+            }
+        });
     }
 }
