@@ -3,6 +3,14 @@
     padding-bottom: 166px;
     background: #F6F8FA;
 
+
+    #media-breakpoint-down(md, {
+            padding-top: 135px;
+            padding-bottom: 120px;
+        }
+
+    );
+
     &__container {
         #make-container();
         #make-container-max-widths();
@@ -14,6 +22,12 @@
         font-weight: @font-weight-bolder;
         margin-bottom: 84px;
         text-align: center;
+
+        #media-breakpoint-down(md, {
+                margin-bottom: 84px - 50px;
+            }
+
+        );
     }
 
     &__row {
@@ -22,6 +36,11 @@
 
     &__col {
         #make-col-ready();
-        #make-col(4);
+
+        #media-breakpoint-up(lg, {
+                #make-col(4);
+            }
+
+        );
     }
 }

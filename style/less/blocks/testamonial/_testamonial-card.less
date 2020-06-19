@@ -6,11 +6,19 @@
     border-radius: 10px;
     overflow: hidden;
 
+    #media-breakpoint-down(md, {
+       margin-top: 40px;
+       });
+
     &__top {
         position: relative;
         padding: 20px;
         min-height: 259px;
         overflow: hidden;
+
+        #media-breakpoint-down(md, {
+            min-height: 189px;
+           });
     }
 
     &__icon {
@@ -83,6 +91,7 @@
     &__bottom {
         padding: 20px;
         padding-bottom: 30px;
+        position: relative;
     }
 
     &__bottom-title {
@@ -95,6 +104,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 27px;
+
+        #media-breakpoint-down(md, {
+         margin-bottom: 0;
+        });
     }
 
     &__director-img {
@@ -156,5 +169,13 @@
         img {
             margin-right: 7px;
         }
+
+        #media-breakpoint-down(md, {
+            width: 289px;
+            position: absolute;
+            right: 34px;
+            bottom: 34px;
+
+        });
     }
 }

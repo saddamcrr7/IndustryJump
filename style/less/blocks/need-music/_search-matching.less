@@ -4,6 +4,10 @@
     flex-direction: column;
     align-items: center;
 
+    #media-breakpoint-down(md, {
+        margin-top: 75px;
+    });
+
     &__row {
         #make-row();
         width: 100%;
@@ -11,7 +15,18 @@
 
     &__col {
         #make-col-ready();
-        #make-col(3)
+
+        #media-breakpoint-up(md, {
+                #make-col(6);
+            }
+
+        );
+
+        #media-breakpoint-up(lg, {
+                #make-col(3);
+            }
+
+        );
     }
 
     &__btn {
@@ -59,7 +74,7 @@
         width: 100%;
         font-size: 16px;
     }
-    
+
     &__select-text {
         color: #202020;
     }
