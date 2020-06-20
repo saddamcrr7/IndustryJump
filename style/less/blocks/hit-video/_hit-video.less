@@ -9,6 +9,13 @@
 
     );
 
+    #media-breakpoint-down(sm, {
+        padding-top: 88px;
+        padding-bottom: 70px;
+    }
+
+);
+
     &__bg {
         border: 1px solid #00000000;
 
@@ -40,6 +47,10 @@
         text-align: center;
         position: relative;
         z-index: 2;
+
+        #media-breakpoint-down(sm, {
+            max-width: 313px + @grid-gutter-width;
+        })
     }
 
     &__tag {
@@ -68,6 +79,15 @@
             }
 
         );
+
+        #media-breakpoint-down(sm, {
+            font-size: 36px;
+            margin-bottom: 6px;
+            line-height: 40px;
+            margin-bottom: 10px;
+        }
+
+    );
     }
 
     &__sub {
@@ -75,6 +95,12 @@
         color: @white;
         margin-bottom: 42px;
         text-transform: capitalize;
+
+        #media-breakpoint-down(sm, {
+            font-size: 17px;
+            color: #D1D1D1;
+            margin-bottom: 49px;
+        })
     }
 
     &__cta {

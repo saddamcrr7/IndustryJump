@@ -8,6 +8,10 @@
         margin-top: 75px;
     });
 
+    #media-breakpoint-down(sm, {
+        margin-top: 60px;
+    });
+
     &__row {
         #make-row();
         width: 100%;
@@ -46,6 +50,10 @@
         &:focus {
             outline: none;
         }
+
+        #media-breakpoint-down(sm, {
+            margin-top: 40px;
+          })
     }
 
     &__item {
@@ -66,6 +74,11 @@
         letter-spacing: 0px;
         color: #0F64B9;
         margin-bottom: 13px;
+
+
+        #media-breakpoint-down(sm, {
+          padding-left: 26px;
+        })
     }
 
     &__select {

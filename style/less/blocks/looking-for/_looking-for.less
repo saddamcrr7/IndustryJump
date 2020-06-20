@@ -2,9 +2,10 @@
     padding: 90px 0;
     position: relative;
 
-    #media-breakpoint-down(md, {
-            display: none;
-        }
+    #media-breakpoint-down(sm, {
+        padding-top: 70px;
+        padding-bottom: 73px;
+    }
 
     );
 
@@ -79,9 +80,22 @@
 
     &__col {
         #make-col-ready();
-        #make-col(4);
         position: relative;
         z-index: 2;
+
+        #media-breakpoint-up(lg, {
+                #make-col(4);
+
+            }
+
+        );
+
+        #media-breakpoint-up(md, {
+                #make-col(6);
+
+            }
+
+        );
     }
 
     &__item {
