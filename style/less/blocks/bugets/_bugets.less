@@ -11,6 +11,8 @@
 
     );
 
+
+
     &__container {
         #make-container();
         #make-container-max-widths();
@@ -43,4 +45,16 @@
 
         );
     }
+
+    #media-breakpoint-down(md, {
+        padding-top: 122px;
+        padding-bottom: 122px;
+
+        &__title {
+            margin-bottom: 6px;
+            font-size: 26px;
+        }
+    }
+
+);
 }

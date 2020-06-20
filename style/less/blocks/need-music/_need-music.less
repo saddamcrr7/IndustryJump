@@ -1,6 +1,7 @@
 .block-need-music {
     padding: 138px 0;
     position: relative;
+    overflow: hidden;
 
     &__icon {
         position: absolute;
@@ -53,17 +54,51 @@
 
     #media-breakpoint-down(md, {
 
-    &__icon {
-       
+            &__icon {
 
-        &--tl {
-            left: 45px;
+
+                &--tl {
+                    left: 45px;
+                }
+
+                &--tr {
+                    top: 22px;
+                    right: 34px;
+                }
+            }
         }
 
-        &--tr {
-            top: 22px;
-            right: 34px;
+    );
+
+    #media-breakpoint-down(sm, {
+            padding-top: 115px;
+            padding-bottom: 122px;
+
+            &__title {
+                font-size: 26px;
+                margin-bottom: 18px;
+            }
+
+            &__sub {
+                font-size: 19px;
+                letter-spacing: 0;
+                margin-bottom: 47px;
+            }
+
+            &__icon {
+
+
+                &--tl {
+                    left: -55px;
+                    top: -18px;
+                }
+
+                &--tr {
+                    top: -8px;
+                    right: -64px;
+                }
+            }
         }
-    }
-    })
+
+    )
 }

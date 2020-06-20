@@ -15,10 +15,11 @@
         #make-col-ready();
         display: flex;
         flex-direction: column;
-        margin-bottom: 64px;
+        margin-bottom: 40px;
 
         #media-breakpoint-up(md, {
                 #make-col(6);
+                margin-bottom: 64px;
             }
 
         );
@@ -47,4 +48,10 @@
             text-decoration: none;
         }
     }
+
+
+    #media-breakpoint-down(sm, {
+        padding-top: 40px;
+    })
+
 }
