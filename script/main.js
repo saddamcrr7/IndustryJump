@@ -45,5 +45,36 @@ window.onload = function () {
             },
         },
     })
+
+    // video player
+
+    const playBtns = document.querySelectorAll('.video-play-btn')
+    const closeBtn = document.querySelector('.video-player-modal__close')
+    const videContainer = document.querySelector('.video-player-modal__container')
+    const videoModalElm  = document.querySelector('.video-player-modal')
+
+
+    function openVideoModal(src) {
+        const iframe = document.createElement('iframe')
+        iframe.src = src
+        videoModalElm.classList.add('is-active')
+        videContainer.appendChild(iframe)
+    }
+
+    function closeVideoModal() {
+        videoModalElm.classList.remove('is-active')
+        videContainer.innerHTML = ''
+    }
+
+        playBtns.forEach(playBtn => {
+            playBtn.addEventListener('click', ()=> {
+                openVideoModal(playBtn.dataset.src)
+            })
+        })
+    
+        closeBtn.addEventListener('click', ()=> {
+            closeVideoModal()
+        })
+
 }
 
