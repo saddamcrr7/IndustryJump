@@ -64,6 +64,19 @@
         position: relative;
         padding-left: 34px;
         padding-top: 39px;
+
+        & > a {
+            display: block;
+            border-bottom: 1px solid #F3F3F3;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+    
+            &:last-of-type {
+                border-bottom: 1px solid transparent;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
     }
 
     &__body-title {
@@ -79,18 +92,11 @@
         text-transform: capitalize;
     }
 
+
+
     &__creatives {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid #F3F3F3;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-
-        &:last-of-type {
-            border-bottom: 1px solid transparent;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
     }
 
     &__creatives-image {
