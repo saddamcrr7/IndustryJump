@@ -86,11 +86,49 @@
         border-radius: 24px;
         width: 100%;
         font-size: 16px;
+        position: relative;
+
+        &.is-active {
+            display: block;
+            .search-matching__select-options {
+                display: block;
+            }
+
+            .search-matching__select-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__select-icon  {
+        transition: 0.3s;
+    }
+
+    &__select-options {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        display: none;
+        z-index: 555;
+    }
+
+    &__select-option {
+        color: #202020;
+        font-size: 16px;
+        padding: 12px 26px;
+        background: @white;
+        border-bottom: 1px solid rgba(@black, 0.1);
+        cursor: pointer;
+
+        &:hover {
+            background: #ececec;
+        }
     }
 
     &__select-text {
         color: #202020;
     }
 
-
+    
 }

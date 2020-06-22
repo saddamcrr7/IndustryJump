@@ -51,7 +51,7 @@ window.onload = function () {
     const playBtns = document.querySelectorAll('.video-play-btn')
     const closeBtn = document.querySelector('.video-player-modal__close')
     const videContainer = document.querySelector('.video-player-modal__container')
-    const videoModalElm  = document.querySelector('.video-player-modal')
+    const videoModalElm = document.querySelector('.video-player-modal')
 
 
     function openVideoModal(src) {
@@ -66,15 +66,40 @@ window.onload = function () {
         videContainer.innerHTML = ''
     }
 
-        playBtns.forEach(playBtn => {
-            playBtn.addEventListener('click', ()=> {
-                openVideoModal(playBtn.dataset.src)
+    playBtns.forEach(playBtn => {
+        playBtn.addEventListener('click', () => {
+            openVideoModal(playBtn.dataset.src)
+        })
+    })
+
+    closeBtn.addEventListener('click', () => {
+        closeVideoModal()
+    })
+
+
+    // select
+    const selectElms = document.querySelectorAll('.search-matching__select')
+
+    selectElms.forEach(selectElm => {
+        const openBtn = selectElm.querySelector('.search-matching__select-main')
+        const selectedText = selectElm.querySelector('.search-matching__select-text')
+        const options = selectElm.querySelectorAll('.search-matching__select-option')
+
+        openBtn.addEventListener('click', () => {
+            selectElm.classList.add('is-active')
+        })
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                selectElm.classList.remove('is-active')
+                selectedText.dataset.value = option.dataset.value
+                selectedText.innerHTML = option.innerText
             })
         })
-    
-        closeBtn.addEventListener('click', ()=> {
-            closeVideoModal()
+
+        selectElm.addEventListener('mouseleave', ()=> {
+            selectElm.classList.remove('is-active')
         })
+    })
 
 }
-
