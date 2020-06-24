@@ -2,6 +2,11 @@
     padding: 50px 0;
     background: @footer-bg;
 
+    #media-breakpoint-down(sm, {
+            order: 13;
+        }
+
+    );
 
     &__container {
         #make-container();
@@ -24,6 +29,7 @@
         #media-breakpoint-up(lg, {
                 #make-col(3);
             }
+
         );
 
 
@@ -62,9 +68,11 @@
 
     &__copyright {
         color: @footer-link;
-        
+
         #media-breakpoint-up(md, {
-            margin-top: 78px;
-        })
+                margin-top: 78px;
+            }
+
+        )
     }
 }
