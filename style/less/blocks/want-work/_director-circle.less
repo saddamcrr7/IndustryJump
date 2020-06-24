@@ -84,6 +84,14 @@
             height: 117px;
             top: 0;
             left: 53px;
+
+            .m {
+                display: none;
+            }
+
+            .d {
+                display: block;
+            }
         }
 
         &--2 {
@@ -115,6 +123,10 @@
         &--6 {
             top: 31px;
             right: 53px;
+        }
+
+        &--7 {
+            display: none;
         }
 
         #media-breakpoint-down(md, {
@@ -175,6 +187,14 @@
                     left: auto;
                     bottom: 32px;
                     right: 36px;
+
+                    .m {
+                        display: block;
+                    }
+
+                    .d {
+                        display: none;
+                    }
                 }
 
                 &--2 {
@@ -209,8 +229,17 @@
                 &--6 {
                     width: 43px;
                     height: 43px;
-                    top: 69px;
-                    right: 133px;
+                    top: 89px;
+                    right: 129px;
+                }
+
+                &--7 {
+                    display: block;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 20px;
+                    bottom: 0;
+                    left: 70px;
                 }
             }
 

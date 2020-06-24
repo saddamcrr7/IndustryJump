@@ -46,6 +46,20 @@ window.onload = function () {
         },
     })
 
+    const wantSlider = new Swiper('.block-want-work__slider', {
+        slidesPerView: 1,
+        wrapperClass: 'block-want-work__slider-row',
+        slideClass: 'block-want-work__slider-item',
+        slideActiveClass: 'block-want-work__slider-item--active',
+        centeredSlides: true,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    })
+
     // video player
 
     const playBtns = document.querySelectorAll('.video-play-btn')
@@ -97,7 +111,7 @@ window.onload = function () {
             })
         })
 
-        selectElm.addEventListener('mouseleave', ()=> {
+        selectElm.addEventListener('mouseleave', () => {
             selectElm.classList.remove('is-active')
         })
     })
@@ -106,7 +120,7 @@ window.onload = function () {
     const mItems = document.querySelectorAll('.music-item')
 
     mItems.forEach(mItem => {
-        mItem.addEventListener('click', ()=> {
+        mItem.addEventListener('click', () => {
             mItems.forEach(r => r.classList.remove('is-active'))
             mItem.classList.add('is-active')
         })
