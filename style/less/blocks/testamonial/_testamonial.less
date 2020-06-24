@@ -22,21 +22,29 @@
 
     &__col {
         #make-col-ready();
+
         #media-breakpoint-up(lg, {
-            #make-col(4);
-        })
+                #make-col(4);
+            }
+
+        )
     }
 
     #media-breakpoint-down(md, {
-        padding: 119px 0;
-    });
+            padding: 119px 0;
+        }
+
+    );
 
     #media-breakpoint-down(sm, {
-        padding: 114px 0;
+            padding: 114px 0;
+            order: 5;
 
-        &__title {
-            font-size: 26px;
-            margin-bottom: 32px;
+            &__title {
+                font-size: 26px;
+                margin-bottom: 32px;
+            }
         }
-    });
+
+    );
 }
