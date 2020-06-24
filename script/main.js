@@ -102,4 +102,13 @@ window.onload = function () {
         })
     })
 
+    // music items
+    const mItems = document.querySelectorAll('.music-item')
+
+    mItems.forEach(mItem => {
+        mItem.addEventListener('click', ()=> {
+            mItems.forEach(r => r.classList.remove('is-active'))
+            mItem.classList.add('is-active')
+        })
+    })
 }
