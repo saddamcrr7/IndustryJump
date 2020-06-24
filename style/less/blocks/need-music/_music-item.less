@@ -8,6 +8,13 @@
     border-radius: 28px;
     overflow: hidden;
     margin-bottom: 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.is-active {
+        border: 2px solid @mango;
+    }
 
     &__bg {
         position: absolute;
