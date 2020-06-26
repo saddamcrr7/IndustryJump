@@ -31,21 +31,6 @@ window.onload = function () {
         },
     })
 
-    const bugetsSlider = new Swiper('.block-bugets__slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 13,
-        wrapperClass: 'block-bugets__row',
-        slideClass: 'block-bugets__col',
-        slideActiveClass: 'block-bugets__col--active',
-        loop: true,
-        loopFillGroupWithBlank: true,
-        breakpoints: {
-            640: {
-                spaceBetween: 30,
-            },
-        },
-    })
-
     const wantSlider = new Swiper('.block-want-work__slider', {
         slidesPerView: 1,
         wrapperClass: 'block-want-work__slider-row',
