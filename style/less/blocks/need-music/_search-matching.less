@@ -111,6 +111,9 @@
         right: 0;
         display: none;
         z-index: 555;
+        border: 2px solid rgba(@black, 0.1);
+        overflow: hidden;
+        border-radius: 10px;
     }
 
     &__select-option {
@@ -120,6 +123,11 @@
         background: @white;
         border-bottom: 1px solid rgba(@black, 0.1);
         cursor: pointer;
+        transition: 0.15s;
+
+        &:last-child {
+            border-bottom: none;
+        }
 
         &:hover {
             background: #ececec;
