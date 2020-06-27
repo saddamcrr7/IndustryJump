@@ -37,6 +37,7 @@ window.onload = function () {
         slideClass: 'block-want-work__slider-item',
         slideActiveClass: 'block-want-work__slider-item--active',
         centeredSlides: true,
+        direction: 'vertical',
         loop: true,
         loopFillGroupWithBlank: true,
         autoplay: {
