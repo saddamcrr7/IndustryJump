@@ -64,6 +64,9 @@ function postModal() {
         if (formIndex == (postForms.length - 1)) {
             proceedBtn.classList.remove('is-active')
             postBtn.classList.add('is-active')
+        } else {
+            proceedBtn.classList.add('is-active')
+            postBtn.classList.remove('is-active')
         }
     }
 
