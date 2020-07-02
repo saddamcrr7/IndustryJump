@@ -44,7 +44,7 @@
             <h1 class="block-hero__title"><span class="block-hero__title--blue">Hire</span> The Worlds Top Music Video
                 <span class="block-hero__title--yellow">Directors</span></h1>
             <div class="block-hero__ctas">
-                <a href="#" class="block-hero__cta block-hero__cta--post">Post Project <svg id="Icon_Arrow"
+                <a href="#" class="block-hero__cta block-hero__cta--post post-project-btn">Post Project <svg id="Icon_Arrow"
                         data-name="Icon/Arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         viewBox="0 0 20 20">
                         <rect id="Area" width="20" height="20" fill="none" />
@@ -745,7 +745,7 @@
             <div class="block-hit-video__tag">free</div>
             <div class="block-hit-video__title">make your next hit video</div>
             <div class="block-hit-video__sub">quick, easy and free</div>
-            <a href="#" class="block-hit-video__cta">Post project <img src="./images/Icon-Arrow.svg" alt=""> </a>
+            <a href="#" class="block-hit-video__cta post-project-btn">Post project <img src="./images/Icon-Arrow.svg" alt=""> </a>
         </div>
     </div>
 
@@ -1121,7 +1121,7 @@
         <div class="block-get-started__container">
             <div class="block-get-started__tag">free</div>
             <div class="block-get-started__title">Get started Today</div>
-            <a href="#" class="block-get-started__cta">Post project <img src="./images/Icon-Arrow.svg" alt=""> </a>
+            <a href="#" class="block-get-started__cta post-project-btn">Post project <img src="./images/Icon-Arrow.svg" alt=""> </a>
         </div>
     </div>
 
@@ -1280,7 +1280,7 @@
         <div class="video-player-modal__container"></div>
     </div>
 
-    <div class="ij-post-modal is-active">
+    <div class="ij-post-modal">
         <div class="ij-post-modal__backdrop"></div>
         <div class="ij-post-modal__container">
             <div class="ij-post-modal__close">
@@ -1355,6 +1355,13 @@
                                     for?</label>
                                 <input class="post-project__form-input" type="text" id="">
                             </div>
+                            <ul class="post-project__tags">
+                                <li class="post-project__tag">Director</li>
+                                <li class="post-project__tag">Videographer</li>
+                                <li class="post-project__tag">Producer</li>
+                                <li class="post-project__tag">Makeup Artist</li>
+                                <li class="post-project__tag">Stylist</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -1382,7 +1389,7 @@
                                         <input class="post-project__form-input" type="text" id="">
                                     </div>
                                 </div>
-                            </div>
+                            </div>                         
                         </div>
                     </div>
 
@@ -1394,7 +1401,7 @@
                                     placeholder="Ex. Looking for a social media video editor">
                             </div>
                             <div class="post-project__form-group">
-                                <label for="" class="post-project__form-label"></label>
+                                <label for="" class="post-project__form-label">Description</label>
                                 <textarea class="post-project__form-input post-project__form-input--textarea" id=""
                                     placeholder="Description"></textarea>
                             </div>
@@ -1445,6 +1452,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="./script/vendor/swiper.min.js"></script>
+    <script src="./script/post-modal.js"></script>
     <script src="./script/main.js"></script>
 </body>
 
