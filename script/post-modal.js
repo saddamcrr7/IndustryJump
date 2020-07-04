@@ -83,6 +83,18 @@ function postModal() {
         backBtn.classList.remove('is-active')
         proceedBtn.classList.add('is-active')
         postBtn.classList.remove('is-active')
+
+        const inputs = document.querySelectorAll('.post-project__form-input')
+        inputs.forEach(input => input.value = '')
+    })
+
+    const creativeInput = document.querySelector('.post-project__form--creative .post-project__form-input')
+    const creativeTags = document.querySelectorAll('.post-project__form--creative .post-project__tag')
+
+    creativeTags.forEach(tag => {
+        tag.addEventListener('click', ()=> {
+            creativeInput.value = tag.innerText
+        })
     })
 
 }
