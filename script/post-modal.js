@@ -61,7 +61,7 @@ function postModal() {
                 })
 
                 creativeTags.forEach(tag => {
-                    tag.addEventListener('click',(e)=> {
+                    tag.addEventListener('click', (e) => {
                         formGroups[i].classList.remove('post-project__form-group--error')
                         formGroups[i].removeChild(div)
                         proceedBtn.disabled = false
@@ -131,13 +131,15 @@ function postModal() {
             e.target.parentNode.classList.add('post-project__form-group--error')
             e.target.parentNode.appendChild(div)
             isInputEmpty = false
-        }else {
+            postBtn.disabled = true
+        } else {
             isInputEmpty = true
+            postBtn.disabled = false
         }
     })
 
-    inputEmail.addEventListener('focus',(e)=> {
-        if(e.target.parentNode.childNodes.length > 5) {
+    inputEmail.addEventListener('focus', (e) => {
+        if (e.target.parentNode.childNodes.length > 5) {
             e.target.parentNode.classList.remove('post-project__form-group--error')
             e.target.parentNode.removeChild(div)
         }
