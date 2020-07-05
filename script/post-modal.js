@@ -30,13 +30,34 @@ function postModal() {
 
 
     let formIndex = 0
+    let isInputEmpty = false
+
+    function valideForm() {
+        const selectedForm = postForms[formIndex]
+        const inputs = selectedForm.querySelectorAll('.post-project__form-input')
+
+        let h = []
+
+        inputs.forEach((input, i) => {
+            if (input.value.length > 0) {
+                h.push(true)
+            } else {
+                h.push(false)
+            }
+        })
+
+        isInputEmpty = h.every(Boolean)
+    }
+
 
     function nextForm() {
-        if (formIndex == (postForms.length - 1)) return
+        valideForm()
+        if (formIndex == (postForms.length - 1) || isInputEmpty == false) return
         formIndex += 1
         formSlide(formIndex)
         navItems[formIndex].classList.add('is-active')
         btnCntrols(formIndex)
+
     }
 
     function prevForm() {
@@ -64,15 +85,26 @@ function postModal() {
         if (formIndex == (postForms.length - 1)) {
             proceedBtn.classList.remove('is-active')
             postBtn.classList.add('is-active')
+            isInputEmpty = false
         } else {
             proceedBtn.classList.add('is-active')
             postBtn.classList.remove('is-active')
         }
     }
 
+    function disabledBtn() {
+        if (isInputEmpty == false) {
+            proceedBtn.disabled = true
+        } else {
+            proceedBtn.disabled = false
+        }
+    }
+
+
     proceedBtn.addEventListener('click', () => nextForm())
     backBtn.addEventListener('click', () => prevForm())
     postBtn.addEventListener('click', (e) => {
+        if (isInputEmpty == false) return
         close(e)
         postForms.forEach(postForm => postForm.classList.remove('is-active'))
         navItems.forEach(postForm => postForm.classList.remove('is-active'))
@@ -92,7 +124,7 @@ function postModal() {
     const creativeTags = document.querySelectorAll('.post-project__form--creative .post-project__tag')
 
     creativeTags.forEach(tag => {
-        tag.addEventListener('click', ()=> {
+        tag.addEventListener('click', () => {
             creativeInput.value = tag.innerText
         })
     })
