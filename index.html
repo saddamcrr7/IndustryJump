@@ -1347,14 +1347,13 @@
                         </div>
                     </div>
                 </div>
-                <form >
                 <div class="post-project__body">
                     <div class="post-project__form post-project__form--creative is-active">
                         <div class="post-project__form-container">
                             <div class="post-project__form-group">
                                 <label for="creative" class="post-project__form-label">What kind of creative(s) are you looking
                                     for?</label>
-                                <input class="post-project__form-input" type="text" id="creative" required>
+                                <input class="post-project__form-input" type="text" id="creative" >
                             </div>
                             <ul class="post-project__tags">
                                 <li class="post-project__tag">Director</li>
@@ -1370,26 +1369,30 @@
                         <div class="post-project__form-container">
                             <div class="post-project__form-row">
                                 <div class="post-project__form-col">
-                                    <div class="post-project__form-group">
+                                    
                                         <label for="budget" class="post-project__form-label">What is your budget?</label>
                                         <div class="post-project__form-input-row">
                                             <div class="post-project__form-input-col">
-                                                <input class="post-project__form-input" type="text" id="budget"
-                                                    placeholder="Min" required>
+                                                <div class="post-project__form-group">
+                                                    <input class="post-project__form-input" type="text" id="budget"
+                                                    placeholder="Min">
                                                     <div class="post-project__form-input-icon">$</div>
+                                                </div>
+                                               
                                             </div>
                                             <div class="post-project__form-input-col">
-                                                <input class="post-project__form-input" type="text" id="budgetMax"
-                                                    placeholder="Max" required>
+                                                <div class="post-project__form-group">
+                                                    <input class="post-project__form-input" type="text" id="budgetMax"
+                                                    placeholder="Max">
                                                     <div class="post-project__form-input-icon">$</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="post-project__form-col">
                                     <div class="post-project__form-group">
                                         <label for="city" class="post-project__form-label">What city?</label>
-                                        <input class="post-project__form-input" type="text" id="city" required>
+                                        <input class="post-project__form-input" type="text" id="city">
                                     </div>
                                 </div>
                             </div>                         
@@ -1401,13 +1404,13 @@
                             <div class="post-project__form-group"> <!--.post-project__form-group--error-->
                                 <label for="Title" class="post-project__form-label">Title</label>
                                 <input class="post-project__form-input" type="text" id="Title"
-                                    placeholder="Ex. Looking for a social media video editor" required>
+                                    placeholder="Ex. Looking for a social media video editor">
                                 <!-- <div class="post-project__form-erroText">You’ve entered a wrong value.</div> -->
                             </div>
                             <div class="post-project__form-group">
                                 <label for="Description" class="post-project__form-label">Description</label>
                                 <textarea class="post-project__form-input post-project__form-input--textarea" id="Description"
-                                    placeholder="Description" required></textarea>
+                                    placeholder="Description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -1418,20 +1421,19 @@
                                     <div class="post-project__form-col">
                                         <div class="post-project__form-group">
                                             <label for="names" class="post-project__form-label">Your name</label>
-                                            <input class="post-project__form-input" type="text" id="names" placeholder="Name" required>
+                                            <input class="post-project__form-input" type="text" id="names" placeholder="Name">
                                         </div>
                                     </div>
                                     <div class="post-project__form-col">
                                         <div class="post-project__form-group">
                                             <label for="email" class="post-project__form-label">Email</label>
-                                            <input class="post-project__form-input" type="email" required id="email"
+                                            <input class="post-project__form-input post-project__form-input--email" type="email" id="email"
                                                 placeholder="Email Address">
                                         </div>
                                     </div>
                                 </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="post-project__footer">
@@ -1439,10 +1441,9 @@
                         <button class="post-project__btn post-project__btn--cancel is-active">Cancel</button>
                         <button class="post-project__btn post-project__btn--back">Back</button>
                         <button class="post-project__btn post-project__btn--proceed is-active">Proceed</button>
-                        <button class="post-project__btn post-project__btn--post-project" type="submit">Post Project</button>
+                        <button class="post-project__btn post-project__btn--post-project">Post Project</button>
                     </div>
                 </div>
-            </form>
 
             </div>
         </div>
