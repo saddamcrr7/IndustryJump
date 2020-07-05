@@ -158,6 +158,15 @@
         #make-col(6);
         padding-right: 5px;
         padding-left: 5px;
+        position: relative;
+    }
+
+    &__form-input-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        color: #220022;
     }
 
     &__form-group {
@@ -201,6 +210,10 @@
             }
 
         )
+        }
+
+        &#budget, &#budgetMax {
+            padding-left: 30px;
         }
     }
 
