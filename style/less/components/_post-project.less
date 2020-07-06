@@ -211,11 +211,14 @@
         border: 0.8px solid #D5D5D5;
         font-size: 16px;
         color: #202020;
-        line-height: 16px;
         width: 100%;
         outline: none;
         box-shadow: none !important;
         background-clip: padding-box;
+
+        &::-webkit-input-placeholder {
+            line-height:normal!important;
+       }
 
 
         &:focus {
