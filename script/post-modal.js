@@ -53,15 +53,17 @@ function postModal() {
                 formGroups[i].appendChild(div)
                 proceedBtn.disabled = true
                 input.addEventListener('blur', (e) => {
-                    if (e.target.value.length > 0) {
+                    if (e.target.value.length > 0 && formGroups[i].childElementCount > 2) {
                         formGroups[i].classList.remove('post-project__form-group--error')
                         formGroups[i].removeChild(div)
                         proceedBtn.disabled = false
+                        isInputEmpty = true
                     }
                 })
 
                 creativeTags.forEach(tag => {
                     tag.addEventListener('click', (e) => {
+                        if(formGroups[i].childElementCount > 2)
                         formGroups[i].classList.remove('post-project__form-group--error')
                         formGroups[i].removeChild(div)
                         proceedBtn.disabled = false
@@ -126,28 +128,31 @@ function postModal() {
     div.innerHTML = 'Please fill out the correct Email'
 
     const inputEmail = document.querySelector('.post-project__form-input--email')
-    inputEmail.addEventListener('blur', (e) => {
-        if (!emailIsValid(e.target.value)) {
-            e.target.parentNode.classList.add('post-project__form-group--error')
-            e.target.parentNode.appendChild(div)
-            isInputEmpty = false
-            postBtn.disabled = true
-        } else {
-            isInputEmpty = true
-            postBtn.disabled = false
-        }
-    })
-
-    inputEmail.addEventListener('focus', (e) => {
-        if (e.target.parentNode.childNodes.length > 5) {
-            e.target.parentNode.classList.remove('post-project__form-group--error')
-            e.target.parentNode.removeChild(div)
-        }
-    })
+    if(inputEmail) {
+        inputEmail.addEventListener('blur', (e) => {
+            if (!emailIsValid(e.target.value)) {
+                e.target.parentNode.classList.add('post-project__form-group--error')
+                e.target.parentNode.appendChild(div)
+                isInputEmpty = false
+                postBtn.disabled = true
+            } else {
+                isInputEmpty = true
+                postBtn.disabled = false
+            }
+        })
+    
+        inputEmail.addEventListener('focus', (e) => {
+            if (e.target.parentNode.childNodes.length > 5) {
+                e.target.parentNode.classList.remove('post-project__form-group--error')
+                e.target.parentNode.removeChild(div)
+            }
+        })
+    }
 
     proceedBtn.addEventListener('click', () => nextForm())
     backBtn.addEventListener('click', () => prevForm())
     postBtn.addEventListener('click', (e) => {
+        valideForm()
         if (isInputEmpty == false) return
         close(e)
         postForms.forEach(postForm => postForm.classList.remove('is-active'))
