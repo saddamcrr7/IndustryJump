@@ -203,6 +203,9 @@
     }
 
     &__form-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         padding: 9px 20px;
         border-radius: 21px;
         border: 0.8px solid #D5D5D5;
@@ -210,6 +213,10 @@
         color: #202020;
         line-height: 16px;
         width: 100%;
+        outline: none;
+        box-shadow: none !important;
+        background-clip: padding-box;
+
 
         &:focus {
             outline: none;
