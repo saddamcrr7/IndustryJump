@@ -13,11 +13,13 @@ function postModal() {
     function open(event) {
         event.preventDefault()
         modalElm.classList.add('is-active')
+        proceedBtn.disabled = false
     }
 
     function close(event) {
         event.preventDefault()
         modalElm.classList.remove('is-active')
+        proceedBtn.disabled = true
     }
 
     openBtns.forEach(openBtn => {
@@ -35,6 +37,7 @@ function postModal() {
     function valideForm() {
         const selectedForm = postForms[formIndex]
         const inputs = selectedForm.querySelectorAll('.post-project__form-input')
+        const formGroups = selectedForm.querySelectorAll('.post-project__form-group')
 
         let h = []
 
@@ -43,6 +46,27 @@ function postModal() {
                 h.push(true)
             } else {
                 h.push(false)
+                const div = document.createElement('div')
+                div.classList.add('post-project__form-erroText')
+                div.innerHTML = 'Please fill out the form above to proceed'
+                formGroups[i].classList.add('post-project__form-group--error')
+                formGroups[i].appendChild(div)
+                proceedBtn.disabled = true
+                input.addEventListener('blur', (e) => {
+                    if (e.target.value.length > 0) {
+                        formGroups[i].classList.remove('post-project__form-group--error')
+                        formGroups[i].removeChild(div)
+                        proceedBtn.disabled = false
+                    }
+                })
+
+                creativeTags.forEach(tag => {
+                    tag.addEventListener('click',(e)=> {
+                        formGroups[i].classList.remove('post-project__form-group--error')
+                        formGroups[i].removeChild(div)
+                        proceedBtn.disabled = false
+                    })
+                })
             }
         })
 
@@ -57,7 +81,6 @@ function postModal() {
         formSlide(formIndex)
         navItems[formIndex].classList.add('is-active')
         btnCntrols(formIndex)
-
     }
 
     function prevForm() {
@@ -66,6 +89,8 @@ function postModal() {
         formIndex -= 1
         formSlide(formIndex)
         btnCntrols(formIndex)
+        valideForm()
+        proceedBtn.disabled = false
     }
 
     function formSlide(index) {
@@ -92,14 +117,31 @@ function postModal() {
         }
     }
 
-    function disabledBtn() {
-        if (isInputEmpty == false) {
-            proceedBtn.disabled = true
-        } else {
-            proceedBtn.disabled = false
-        }
+    function emailIsValid(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
     }
 
+    const div = document.createElement('div')
+    div.classList.add('post-project__form-erroText')
+    div.innerHTML = 'Please fill out the correct Email'
+
+    const inputEmail = document.querySelector('.post-project__form-input--email')
+    inputEmail.addEventListener('blur', (e) => {
+        if (!emailIsValid(e.target.value)) {
+            e.target.parentNode.classList.add('post-project__form-group--error')
+            e.target.parentNode.appendChild(div)
+            isInputEmpty = false
+        }else {
+            isInputEmpty = true
+        }
+    })
+
+    inputEmail.addEventListener('focus',(e)=> {
+        if(e.target.parentNode.childNodes.length > 5) {
+            e.target.parentNode.classList.remove('post-project__form-group--error')
+            e.target.parentNode.removeChild(div)
+        }
+    })
 
     proceedBtn.addEventListener('click', () => nextForm())
     backBtn.addEventListener('click', () => prevForm())
@@ -128,7 +170,6 @@ function postModal() {
             creativeInput.value = tag.innerText
         })
     })
-
 }
 
 postModal()
